@@ -3,6 +3,7 @@ package config
 import (
 	"github.com/containous/flaeg/parse"
 	"github.com/containous/traefik/ip"
+	"github.com/iancoleman/orderedmap"
 )
 
 // Middleware holds the Middleware configuration.
@@ -21,6 +22,7 @@ type Middleware struct {
 	BasicAuth         *BasicAuth         `json:"basicAuth,omitempty"`
 	DigestAuth        *DigestAuth        `json:"digestAuth,omitempty"`
 	ForwardAuth       *ForwardAuth       `json:"forwardAuth,omitempty"`
+	OAuth2Auth        *OAuth2Auth        `json:"oauth2Auth,omitempty"`
 	MaxConn           *MaxConn           `json:"maxConn,omitempty"`
 	Buffering         *Buffering         `json:"buffering,omitempty"`
 	CircuitBreaker    *CircuitBreaker    `json:"circuitBreaker,omitempty"`
@@ -39,6 +41,7 @@ type Auth struct {
 	Basic   *BasicAuth   `json:"basic,omitempty" export:"true"`
 	Digest  *DigestAuth  `json:"digest,omitempty" export:"true"`
 	Forward *ForwardAuth `json:"forward,omitempty" export:"true"`
+	OAuth2  *OAuth2Auth  `json:"oauth2,omitempty" export:"true"`
 }
 
 // BasicAuth holds the HTTP basic authentication configuration.
@@ -94,6 +97,29 @@ type ForwardAuth struct {
 	TLS                 *ClientTLS `description:"Enable TLS support" json:"tls,omitempty" export:"true"`
 	TrustForwardHeader  bool       `description:"Trust X-Forwarded-* headers" json:"trustForwardHeader,omitempty" export:"true"`
 	AuthResponseHeaders []string   `description:"Headers to be forwarded from auth response" json:"authResponseHeaders,omitempty"`
+}
+
+type OAuth2AccessRule struct {
+	RequestCondition  orderedmap.OrderedMap `description:"Condition that selects requests to be secured" json:"requestCondition"`
+	TokenIntrospector string                `description:"the token introspector that understands the expected tokens" json:"tokenIntrospector"`
+	TokenCondition    orderedmap.OrderedMap `description:"Condition that defines what aspects of the token to test for to allow access." json:"tokenCondition"`
+}
+
+type OAuth2TokenIntrospectorRef struct {
+	Ref string `json:"ref"`
+}
+
+type OAuth2TokenIntrospector struct {
+	Type          string                       `json:"type"`
+	Introspectors []OAuth2TokenIntrospectorRef `json:"introspectors"`
+	PublicKey     string                       `json:"publicKey,omitempty"`
+	Endpoint      string                       `json:"endpoint,omitempty"`
+}
+
+type OAuth2Auth struct {
+	TokenIntrospectors map[string]*OAuth2TokenIntrospector `description:"Token introspectors that will be used to extract tokens from the request" json:"tokenIntrospectors"`
+	AccessRules        []*OAuth2AccessRule                 `description:"Access rules for requests" json:"accessRules"`
+	Realm              string                              `description:"The name of the authentication realm" json:"realm,omitempty"`
 }
 
 // Headers holds the custom header configuration.

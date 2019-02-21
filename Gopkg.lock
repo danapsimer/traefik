@@ -299,6 +299,17 @@
   revision = "4c0e84591b9aa9e6dcfdf3e020114cd81f89d5f9"
 
 [[projects]]
+  digest = "1:92761e14134d41be54d2af8a0016a24fd361085e7c27a688c323263671f78c89"
+  name = "github.com/bluesoftdev/go-http-matchers"
+  packages = [
+    "extractor",
+    "predicate",
+  ]
+  pruneopts = "NUT"
+  revision = "34ef4b721b7ba2a41806118ca6c75dd364c25ef0"
+  version = "v0.0.6"
+
+[[projects]]
   branch = "master"
   digest = "1:97b8422f271b83e760ce1279715d0f5d124f267459b56806306a64a0f82721c9"
   name = "github.com/cenk/backoff"
@@ -964,6 +975,14 @@
   packages = ["."]
   pruneopts = "NUT"
   revision = "3959339b333561bf62a38b424fd41517c2c90f40"
+
+[[projects]]
+  branch = "master"
+  digest = "1:29f65b8d20b09e9a064d99c4e01eeb553e49e650fbdb7b544109418344c0e408"
+  name = "github.com/iancoleman/orderedmap"
+  packages = ["."]
+  pruneopts = "NUT"
+  revision = "893c443ae36eccd5546b4928673d09dda2ad042f"
 
 [[projects]]
   branch = "master"
@@ -1788,6 +1807,18 @@
 
 [[projects]]
   branch = "master"
+  digest = "1:205141826f9e35a1ee60583127d21f2172fa1b0f8bb751af4b1b6ed4fffb9987"
+  name = "github.homedepot.com/dhp236e/go-web-security"
+  packages = [
+    "provider",
+    "provider/oauth2",
+    "provider/oauth2/token",
+  ]
+  pruneopts = "NUT"
+  revision = "c7f493f9ecac585c087350511b0abdc902d28638"
+
+[[projects]]
+  branch = "master"
   digest = "1:30c1930f8c9fee79f3af60c8b7cd92edd12a4f22187f5527d53509b1a794f555"
   name = "golang.org/x/crypto"
   packages = [
@@ -1807,12 +1838,14 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:62afa19ba5d4c75369a1d6446688e33ef3c04a40aeedd819cf044a509747b563"
+  digest = "1:0b1ee14b590413e3764ab4105bc50fa231531ee099725ad0c6caeac7f79629a0"
   name = "golang.org/x/net"
   packages = [
     "bpf",
     "context",
     "context/ctxhttp",
+    "html",
+    "html/atom",
     "http/httpguts",
     "http2",
     "http2/hpack",
@@ -2033,6 +2066,14 @@
   pruneopts = "NUT"
   revision = "6ee92191fea850cdcab9a18867abf5f521cdbadb"
   version = "v2.1.4"
+
+[[projects]]
+  branch = "v2"
+  digest = "1:ebcfe9ac18161a5a837fe7227b3c168d815a2d4b09864a1638c7f1d4d718d406"
+  name = "gopkg.in/xmlpath.v2"
+  packages = ["."]
+  pruneopts = "NUT"
+  revision = "860cbeca3ebcc600db0b213c0e83ad6ce91f5739"
 
 [[projects]]
   digest = "1:302ad18387350c3d9792da66de666f76d2ca8c62c47dd6b9434269c7cfa18971"
@@ -2312,6 +2353,7 @@
     "github.com/gorilla/websocket",
     "github.com/hashicorp/consul/api",
     "github.com/hashicorp/go-version",
+    "github.com/iancoleman/orderedmap",
     "github.com/influxdata/influxdb/client/v2",
     "github.com/libkermit/compose/check",
     "github.com/libkermit/docker",
@@ -2363,7 +2405,6 @@
     "github.com/vulcand/oxy/ratelimit",
     "github.com/vulcand/oxy/roundrobin",
     "github.com/vulcand/oxy/utils",
-    "github.com/xenolf/lego/acme",
     "github.com/xenolf/lego/certcrypto",
     "github.com/xenolf/lego/certificate",
     "github.com/xenolf/lego/challenge",
@@ -2374,6 +2415,8 @@
     "github.com/xenolf/lego/log",
     "github.com/xenolf/lego/providers/dns",
     "github.com/xenolf/lego/registration",
+    "github.homedepot.com/dhp236e/go-web-security/provider/oauth2",
+    "github.homedepot.com/dhp236e/go-web-security/provider/oauth2/token",
     "golang.org/x/net/http/httpguts",
     "golang.org/x/net/http2",
     "golang.org/x/net/http2/hpack",

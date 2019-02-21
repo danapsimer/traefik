@@ -256,3 +256,11 @@
 [[constraint]]
   name = "gopkg.in/DataDog/dd-trace-go.v1"
   version = "1.5.0"
+
+[[constraint]]
+  branch = "master"
+  name = "github.homedepot.com/dhp236e/go-web-security"
+
+[[constraint]]
+  branch = "master"
+  name = "github.com/iancoleman/orderedmap"

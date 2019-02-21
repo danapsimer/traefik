@@ -193,6 +193,16 @@ func (b *Builder) buildConstructor(ctx context.Context, middlewareName string, c
 		}
 	}
 
+	if config.OAuth2Auth != nil {
+		if middleware == nil {
+			middleware = func(next http.Handler) (http.Handler, error) {
+				return auth.NewOAuth2(ctx, next, config.OAuth2Auth, middlewareName)
+			}
+		} else {
+			return nil, badConf
+		}
+	}
+
 	// Headers
 	if config.Headers != nil {
 		if middleware == nil {
