@@ -1807,7 +1807,7 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:205141826f9e35a1ee60583127d21f2172fa1b0f8bb751af4b1b6ed4fffb9987"
+  digest = "1:ce1084b45ad0cb051a881f713a41fe9650dd620c0ff88782a20537e0252a837a"
   name = "github.homedepot.com/dhp236e/go-web-security"
   packages = [
     "provider",
@@ -1815,7 +1815,7 @@
     "provider/oauth2/token",
   ]
   pruneopts = "NUT"
-  revision = "c7f493f9ecac585c087350511b0abdc902d28638"
+  revision = "b3fa7b8c49a93fae81277759abce0e8d1b43f7e6"
 
 [[projects]]
   branch = "master"
@@ -2318,6 +2318,8 @@
     "github.com/aws/aws-sdk-go/service/dynamodb/dynamodbiface",
     "github.com/aws/aws-sdk-go/service/ec2",
     "github.com/aws/aws-sdk-go/service/ecs",
+    "github.com/bluesoftdev/go-http-matchers/extractor",
+    "github.com/bluesoftdev/go-http-matchers/predicate",
     "github.com/cenk/backoff",
     "github.com/containous/alice",
     "github.com/containous/flaeg",
@@ -2326,6 +2328,7 @@
     "github.com/containous/staert",
     "github.com/coreos/go-systemd/daemon",
     "github.com/davecgh/go-spew/spew",
+    "github.com/dgrijalva/jwt-go",
     "github.com/docker/docker/api/types",
     "github.com/docker/docker/api/types/container",
     "github.com/docker/docker/api/types/events",

@@ -100,9 +100,9 @@ type ForwardAuth struct {
 }
 
 type OAuth2AccessRule struct {
-	RequestCondition  orderedmap.OrderedMap `description:"Condition that selects requests to be secured" json:"requestCondition"`
-	TokenIntrospector string                `description:"the token introspector that understands the expected tokens" json:"tokenIntrospector"`
-	TokenCondition    orderedmap.OrderedMap `description:"Condition that defines what aspects of the token to test for to allow access." json:"tokenCondition"`
+	RequestCondition  *orderedmap.OrderedMap `description:"Condition that selects requests to be secured" json:"requestCondition"`
+	TokenIntrospector string                 `description:"the token introspector that understands the expected tokens" json:"tokenIntrospector"`
+	TokenCondition    *orderedmap.OrderedMap `description:"Condition that defines what aspects of the token to test for to allow access." json:"tokenCondition"`
 }
 
 type OAuth2TokenIntrospectorRef struct {
