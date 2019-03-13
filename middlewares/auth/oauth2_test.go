@@ -116,14 +116,8 @@ var test = `
 			}
 		},
 		{
-			"requestCondition": {
-				"path": {
-					"equals": "/env"
-				}
-			},
-			"tokenCondition": {
-				"allow": true
-			}
+			"requestExpression": "req.URL.Path == \"/env\"",
+			"tokenExpression": "true"
 		},
 		{
 			"requestCondition": {
@@ -228,7 +222,6 @@ func TestNewOAuth2(t *testing.T) {
 
 	authHandler, err := NewOAuth2(ctx, next, &cfg, "test")
 	if assert.NoError(t, err) && assert.NotNil(t, authHandler) {
-		t.Logf("authHandler = %s", authHandler)
 		// ReadOnly:
 		// GET List:
 		testWriter := httptest.NewRecorder()

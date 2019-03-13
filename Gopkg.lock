@@ -222,6 +222,14 @@
   version = "1.27.7"
 
 [[projects]]
+  digest = "1:d04889482897652dedae6d8575b479c06fa3eb3c3abe248163b25d3df5fab43e"
+  name = "github.com/antlr/antlr4"
+  packages = ["runtime/Go/antlr"]
+  pruneopts = "NUT"
+  revision = "be58ebffde8e29c154192c019608f0a5b8e6a064"
+  version = "4.7.2"
+
+[[projects]]
   digest = "1:975108e8d4f5dab096fc991326e96a5716ee8d02e5e7386bb4796171afc4ab9a"
   name = "github.com/aokoli/goutils"
   packages = ["."]
@@ -817,14 +825,19 @@
   revision = "44145f04b68cf362d9c4df2182967c2275eaefed"
 
 [[projects]]
-  digest = "1:03e14cff610a8a58b774e36bd337fa979482be86aab01be81fb8bbd6d0f07fc8"
+  digest = "1:3e3724da4c248f1a069fe7b41baaa0b11d993fac76beeb0e438f57c2a4159f8c"
   name = "github.com/golang/protobuf"
   packages = [
+    "descriptor",
     "proto",
+    "protoc-gen-go/descriptor",
     "ptypes",
     "ptypes/any",
     "ptypes/duration",
+    "ptypes/empty",
+    "ptypes/struct",
     "ptypes/timestamp",
+    "ptypes/wrappers",
   ]
   pruneopts = "NUT"
   revision = "b4deda0973fb4c70b50d226b1af49f3da59f5265"
@@ -845,6 +858,31 @@
   packages = ["."]
   pruneopts = "NUT"
   revision = "e89373fe6b4a7413d7acd6da1725b83ef713e6e4"
+
+[[projects]]
+  digest = "1:eb97836c12a177bf479aa00c3c2247590eebfc252fce6d953e2cbc2405e2643c"
+  name = "github.com/google/cel-go"
+  packages = [
+    "cel",
+    "checker",
+    "checker/decls",
+    "common",
+    "common/debug",
+    "common/operators",
+    "common/overloads",
+    "common/packages",
+    "common/types",
+    "common/types/pb",
+    "common/types/ref",
+    "common/types/traits",
+    "interpreter",
+    "interpreter/functions",
+    "parser",
+    "parser/gen",
+  ]
+  pruneopts = "NUT"
+  revision = "81d826ac4515a47311b5e8734449e3a6ac7afceb"
+  version = "v0.1.0"
 
 [[projects]]
   digest = "1:7e49319ff995ba7b1c89845b02908d609db90879192e0f24d6338fd715043e50"
@@ -1819,6 +1857,14 @@
 
 [[projects]]
   branch = "master"
+  digest = "1:a1843b6f5b1b35f0d0549919dc52adc8170cfe5fe22de59759f6d9ec54b449d3"
+  name = "github.homedepot.com/dhp236e/goel"
+  packages = ["."]
+  pruneopts = "NUT"
+  revision = "b856d4dc92ad32be545c15d975f97218fdece041"
+
+[[projects]]
+  branch = "master"
   digest = "1:30c1930f8c9fee79f3af60c8b7cd92edd12a4f22187f5527d53509b1a794f555"
   name = "golang.org/x/crypto"
   packages = [
@@ -1953,11 +1999,15 @@
   revision = "4f7eeb5305a4ba1966344836ba4af9996b7b4e05"
 
 [[projects]]
-  digest = "1:93180612a69db36a06d801302b867d53a50a8a5f0943b34db66adc0574ea57df"
+  branch = "master"
+  digest = "1:3a2d3599a8d0f0ddab8a7714bc28f809ac734f67e26abad939f7370c56d00e29"
   name = "google.golang.org/genproto"
-  packages = ["googleapis/rpc/status"]
+  packages = [
+    "googleapis/api/expr/v1alpha1",
+    "googleapis/rpc/status",
+  ]
   pruneopts = "NUT"
-  revision = "09f6ed296fc66555a25fe4ce95173148778dfa85"
+  revision = "4f5b463f9597cbe0dd13a6a2cd4f85e788d27508"
 
 [[projects]]
   digest = "1:a893d24a604ae6f45f2d6e00ae9e817476e110e2dd5455152b35bb720ca2f626"
@@ -2352,6 +2402,8 @@
     "github.com/go-kit/kit/metrics/multi",
     "github.com/go-kit/kit/metrics/statsd",
     "github.com/golang/protobuf/proto",
+    "github.com/google/cel-go/cel",
+    "github.com/google/cel-go/checker/decls",
     "github.com/google/go-github/github",
     "github.com/gorilla/websocket",
     "github.com/hashicorp/consul/api",
@@ -2420,6 +2472,7 @@
     "github.com/xenolf/lego/registration",
     "github.homedepot.com/dhp236e/go-web-security/provider/oauth2",
     "github.homedepot.com/dhp236e/go-web-security/provider/oauth2/token",
+    "github.homedepot.com/dhp236e/goel",
     "golang.org/x/net/http/httpguts",
     "golang.org/x/net/http2",
     "golang.org/x/net/http2/hpack",
